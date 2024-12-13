@@ -1,23 +1,24 @@
-#include <stdio.h>
-int primeCheck(int currentNumber) {
-    for (int i = 2; i <= currentNumber / 2; i++) {
-        if (currentNumber % i == 0) return 0;
-    }
-    return 1;
-}
-int main() {
-    int n;
-    int foundPrimes = 0;
-    int currentNumber = 2;
-    printf("Nhap vao so nguyen duong: ");
-    scanf("%d", &n);
-    printf("Cac so nguyen to dau tien la: ");
-    while (foundPrimes < n) {
-        if (primeCheck(currentNumber)) {
-            printf("%d ", currentNumber);
-            foundPrimes++;
-        }
-        currentNumber++;
-    }
-    return 0;
-}
+#include <stdio.h> 
+
+int isPrime(int n){
+	if(n<2)	return 0; 
+	for(int i = 2; i*i <=n; i++){
+		if(n % i == 0) return 0; 
+	}
+	return 1; 
+} 
+
+int main(){
+	int n;
+		printf("nhap vao mot so nguyen duong: ");
+		scanf("%d",&n);
+		printf("%d so nguyen duong dau tien la:\n", n);
+	while(n){
+		int ii;
+		if(isPrime(ii)){
+			printf("%d ",ii) ;
+			n--; 
+		} 
+		++ii; 
+	} 
+} 
